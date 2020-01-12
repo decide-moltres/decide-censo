@@ -1,0 +1,8 @@
+[Tipo] - Título
+ --------------------	
+|	Descripción		 |
+|					 |
+ --------------------					 
+[Rama]
+
+Tipo -> New, Update, Fix, Docs, Test, Merge, Style
