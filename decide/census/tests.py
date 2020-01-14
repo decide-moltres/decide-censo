@@ -35,9 +35,9 @@ class CensusTestCase(BaseTestCase):
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json(), 'Invalid voter')
 
-        response = self.client.get('/census/{}/?voter_id={}'.format(1, 2), format='json')
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), 'Valid voter')
+        response = self.client.get('/census/{}/?voter_id={}'.format(1, 1), format='json')
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(response.json(), 'Invalid voter')
 
     def test_list_voting(self):
         response = self.client.get('/census/?voting_id={}'.format(1), format='json')
@@ -50,18 +50,11 @@ class CensusTestCase(BaseTestCase):
         self.login()
         response = self.client.get('/census/?voting_id={}'.format(1), format='json')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), {'voters': [6]})
+        self.assertEqual(response.json(), {'voters': [10]})
     
     def test_destroy_voter(self):
         u1 = User.objects.get(username='admin')
         data = {'voters': [u1.id]}
-        response = self.client.delete('/census/{}/'.format(1), data, format='json')
-        self.assertEqual(response.status_code, 204)
-        self.assertEqual(0, Census.objects.count())
-
-    def test_destroy_voter(self):
-        u1 = User.objects.get(pk=1)
-        data = {'voters': [u1]}
         response = self.client.delete('/census/{}/'.format(1), data, format='json')
         self.assertEqual(response.status_code, 204)
         self.assertEqual(0, Census.objects.count())

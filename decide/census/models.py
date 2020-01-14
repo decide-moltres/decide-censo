@@ -7,3 +7,16 @@ class Census(models.Model):
 
     class Meta:
         unique_together = (('voting_id'),)
+
+    @classmethod
+    def get_by_id(cls, cid):
+        return Census.objects.get(pk=cid)
+
+    def get_users(self):
+        return self.voter_id
+
+    def get_voting(self):
+        return self.voting_id
+    
+    def __unicode__(self):
+        return '[{},{}]'.format(self.voting_id,self.voter_id)
