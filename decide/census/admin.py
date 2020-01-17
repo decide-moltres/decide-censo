@@ -11,8 +11,8 @@ def export_census(modeladmin, request, queryset):
     cur = con.cursor()
     cur2 = con.cursor()
 
-    cur.execute("SELECT * FROM census_census");
-    cur2.execute("SELECT * FROM census_census_voter_id");
+    cur.execute("SELECT * FROM census_census")
+    cur2.execute("SELECT * FROM census_census_voter_id")
     n = cur.fetchall()
     n2 = cur2.fetchall()
     workbook = xlsxwriter.Workbook('Decide_census.xlsx')
@@ -37,13 +37,29 @@ def export_census(modeladmin, request, queryset):
     print(n)
     workbook.close()
 
+
+def import_census(modeladmin, request, queryset):
+    
+
+    conn = psycopg2.connect(database="postgres", user="decide", password="decide", host="127.0.0.1", port="5432") 
+    cur = conn.cursor()
+
+    # creamos la tabla
+    cur.execute('''create table test(census_id char(50), voting_id char(50), voters_id char(50));''')
+
+   
+    # copiamos lo de file.csv a la base de datos
+    f = open('file.csv','r')
+    cur.copy_from(f, 'test', sep=',')
+    f.close()
+
 class CensusAdmin(admin.ModelAdmin):
     list_display = ('voting_id', )
     list_filter = ('voting_id', )
 
     search_fields = ('voter_id', )
 
-    actions = [ export_census ]
+    actions = [ export_census, import_census]
 
 
 admin.site.register(Census, CensusAdmin)
