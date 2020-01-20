@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% include 'admin/object_history.html' %}
+
+{% block content %}
+
+ <div class="container">
+  <nav>
+    <div class="nav-wrapper row teal darken-3">
+      <div class="col s12">
+            <a href="" class="breadcrumb">{% trans "Census history" %}</a>
+      </div>
+      </div>
+    </div>
+  </nav>
+  <br>
+<h5>{% trans 'History' %}</h5>
+  
+{% if action_list %}
+    <table class="centered">
+        <thead>
+        <tr>
+            <th>{% trans 'Date/time' %} &nbsp;</th>
+            <th>{% trans 'User' %}   &nbsp;</th>
+            <th>{% trans 'Name' %}   &nbsp;</th>
+            <th>{% trans 'Email' %}  &nbsp;</th>
+            <th>{% trans 'Action' %} &nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for action in action_list %}
+        <tr>
+            <th>{{ action.action_time|date:"DATETIME_FORMAT" }} &nbsp;</th>
+            <td>{{ action.user.get_username  }} &nbsp;</td>
+            <td>{{ action.user.get_full_name }} &nbsp;</td>
+            <td>{{ action.user.email }}         &nbsp;</td>
+            <td>{{ action.get_change_message }} &nbsp;</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{% trans "This object doesn't have a change history. It probably wasn't added via this admin site." %}</p>
+{% endif %}
+<br>
+<br>
+<td><a href="" class="waves-effect waves-light btn">{% trans "Back" %}</a></td>
+</div>
+{% endblock %}

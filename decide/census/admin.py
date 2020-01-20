@@ -43,6 +43,8 @@ class CensusAdmin(admin.ModelAdmin):
 
     search_fields = ('voter_id', )
 
+    object_history_template = "census_history.html"
+
     actions = [ export_census ]
 
 
