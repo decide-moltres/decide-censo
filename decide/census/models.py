@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class Census(models.Model):
     voting_id = models.PositiveIntegerField()
     voter_id = models.ManyToManyField(User)
+   # voter_id = models.PositiveIntegerField()
 
     class Meta:
         unique_together = (('voting_id'),)

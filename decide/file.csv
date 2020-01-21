@@ -1,3 +1,3 @@
-census_id,voting_id,voters_id
-2,2,2
-3,3,3
+census_id,voting_id,voter_id
+33,26,900
+67,30,829

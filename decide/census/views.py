@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import permission_required
 from django.db.utils import IntegrityError
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import generics
@@ -10,9 +11,12 @@ from rest_framework.status import (
         HTTP_409_CONFLICT as ST_409
 )
 
+from census import models
 from base.perms import UserIsStaff
 from .models import Census
-
+import csv, io
+from django.contrib import messages
+from django.shortcuts import render
 
 class CensusCreate(generics.ListCreateAPIView):
     permission_classes = (UserIsStaff,)
@@ -50,3 +54,32 @@ class CensusDetail(generics.RetrieveDestroyAPIView):
         except ObjectDoesNotExist:
             return Response('Invalid voter', status=ST_401)
         return Response('Valid voter')
+
+
+@permission_required('admin.can_add_log_entry')
+def census_upload(request):
+    template = "census_upload.html"
+    prompt = {
+        'order': 'Order of the CSV should be  census_id ,voting_id, voter_id'
+    }
+
+    if request.method== "GET":
+        return render(request, template, prompt)
+
+    csv_file= request.FILES['file']
+
+    if not csv_file.name.endswith('.csv'):
+        messages.error(request, 'This is not a csv file')
+
+    data_set = csv_file.read().decode('UTF-8')
+    io_string = io.StringIO(data_set)
+    next(io_string)
+    for column in csv.reader(io_string, delimiter= ',', quotechar="|"):
+        _, created = Census.objects.update_or_create(
+            id=column[0],
+            voting_id= column[1],
+           # voter_id= column[2],
+        )
+
+        context = {}
+        return render(request, template, context)
