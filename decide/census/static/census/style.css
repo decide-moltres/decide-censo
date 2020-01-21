@@ -1,0 +1,14 @@
+.census {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 15px;
+  }
+  

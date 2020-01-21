@@ -2,6 +2,14 @@
 {% load i18n static %}
 {% include 'admin/object_history.html' %}
 
+{% block extrahead %}
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link type="text/css" rel="stylesheet" href="{% static "census/style.css" %}" />
+{% endblock %}
+
 {% block content %}
 
  <div class="container">
@@ -14,27 +22,29 @@
     </div>
   </nav>
   <br>
-<h5>{% trans 'History' %}</h5>
+<h5> &nbsp; {% trans 'History' %}</h5>
   
 {% if action_list %}
     <table class="centered">
-        <thead>
+      <tbody style="background: rgba(128, 255, 0, 0.3); border: 1px solid rgba(100, 200, 0, 0.3);">
         <tr>
-            <th>{% trans 'Date/time' %} &nbsp;</th>
-            <th>{% trans 'User' %}   &nbsp;</th>
-            <th>{% trans 'Name' %}   &nbsp;</th>
-            <th>{% trans 'Email' %}  &nbsp;</th>
-            <th>{% trans 'Action' %} &nbsp;</th>
+            <th colspan="2"> &nbsp; {% trans 'Date/time' %} &nbsp;</th>
+            <th colspan="2"> &nbsp; {% trans 'User' %}      &nbsp;</th>
+            <th colspan="2"> &nbsp; {% trans 'Name' %}      &nbsp;</th>
+            <th colspan="2"> &nbsp; {% trans 'Email' %}     &nbsp;</th>
+            <th colspan="2"> &nbsp; {% trans 'Staff' %}     &nbsp;</th>
+            <th colspan="2"> &nbsp; {% trans 'Action' %}    &nbsp;</th>
         </tr>
-        </thead>
-        <tbody>
+      </tbody>
+        <tbody style="background: rgba(255, 128, 0, 0.3); border: 1px solid rgba(200, 100, 0, 0.3);">
         {% for action in action_list %}
         <tr>
-            <th>{{ action.action_time|date:"DATETIME_FORMAT" }} &nbsp;</th>
-            <td>{{ action.user.get_username  }} &nbsp;</td>
-            <td>{{ action.user.get_full_name }} &nbsp;</td>
-            <td>{{ action.user.email }}         &nbsp;</td>
-            <td>{{ action.get_change_message }} &nbsp;</td>
+            <th colspan="2"> &nbsp;{{ action.action_time|date:"DATETIME_FORMAT" }} &nbsp;</th>
+            <td colspan="2"> &nbsp;{{ action.user.get_username  }} &nbsp;</td>
+            <td colspan="2"> &nbsp;{{ action.user.get_full_name }} &nbsp;</td>
+            <td colspan="2"> &nbsp;{{ action.user.email }}         &nbsp;</td>
+            <td colspan="2"> &nbsp;{{ action.user.is_staff}}       &nbsp;</td>
+            <td colspan="2"> &nbsp;{{ action.get_change_message }} &nbsp;</td>
         </tr>
         {% endfor %}
         </tbody>

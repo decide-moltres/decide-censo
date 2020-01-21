@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 19:43+0100\n"
+"POT-Creation-Date: 2020-01-21 13:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,50 @@ msgstr "Error: "
 #: booth/templates/booth/booth.html:198
 msgid "Conglatulations. Your vote has been sent"
 msgstr "Congratulaciones. Tu voto ha sido enviado"
+
+#: census/templates/census_history.html:19
+msgid "Census history"
+msgstr "Historial del censo"
+
+#: census/templates/census_history.html:25
+msgid "History"
+msgstr "Historial"
+
+#: census/templates/census_history.html:31
+msgid "Date/time"
+msgstr "Fecha/Hora"
+
+#: census/templates/census_history.html:32
+#, fuzzy
+#| msgid "Username"
+msgid "User"
+msgstr "Nombre de usuario"
+
+#: census/templates/census_history.html:33
+msgid "Name"
+msgstr "Nombre"
+
+#: census/templates/census_history.html:34
+msgid "Email"
+msgstr "Correo"
+
+#: census/templates/census_history.html:35
+msgid "Staff"
+msgstr "Empleado"
+
+#: census/templates/census_history.html:36
+msgid "Action"
+msgstr "Acción"
+
+#: census/templates/census_history.html:53
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr "Este objeto no tiene historial de cambios."
+
+#: census/templates/census_history.html:57
+msgid "Back"
+msgstr "Atrás"
 
 #: decide/settings.py:163
 msgid "Español"
