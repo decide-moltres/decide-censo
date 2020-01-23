@@ -15,11 +15,8 @@ def export_census(modeladmin, request, queryset):
 
 
     cur.execute("SELECT * FROM census_census")
-class CensusResource(resources.ModelResource):
     cur2.execute("SELECT * FROM census_census_voter_id")
-    class Meta:
     n = cur.fetchall()
-        model= Census
     n2 = cur2.fetchall()
     workbook = xlsxwriter.Workbook('Decide_census.xlsx')
     worksheet = workbook.add_worksheet()
