@@ -1,6 +1,20 @@
 from django.contrib import admin
+from django.shortcuts import redirect, render
+from rest_framework import serializers
+from rest_framework.response import Response
+from rest_framework import generics
+
+from rest_framework.status import (
+        HTTP_201_CREATED as ST_201,
+        HTTP_204_NO_CONTENT as ST_204,
+        HTTP_400_BAD_REQUEST as ST_400,
+        HTTP_401_UNAUTHORIZED as ST_401,
+        HTTP_409_CONFLICT as ST_409
+)
 
 from .models import Census
+from voting.models import Voting
+from django.contrib.auth.models import User
 
 import psycopg2
 import xlsxwriter
@@ -37,13 +51,28 @@ def export_census(modeladmin, request, queryset):
     print(n)
     workbook.close()
 
+def viewVoters(modeladmin, request, queryset, *voting_id):
+
+    voter = request.GET.get('voter_id')
+    #voter = Voter.objects.all()
+    #voters = Census.objects.get(voter_id=voter)
+    users = User.objects.all()
+    census = set(Census.objects.filter(voting_id=request.GET.get('voting_id')))
+
+    for censo in census:
+
+        usuario = Census.objects.filter(voting_id=voting_id).values_list('voter_id', flat=True)
+        users.append(usuario)
+
+    return render(request, "view_voters.html", {'users': users})    
+
 class CensusAdmin(admin.ModelAdmin):
     list_display = ('name', 'voting_id')
     list_filter = ('name', 'voting_id')
 
     search_fields = ('voter_id', )
 
-    actions = [ export_census ]
+    actions = [ export_census, viewVoters ]
 
 
 admin.site.register(Census, CensusAdmin)
