@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Censos {% endblock %}
+
+{% block encabezado %} <h1>Lista censos</h1> {% endblock %}
+
+{% block contenido %}
+<ul>
+	{% for dato in census %}
+	<li>{{dato.get_name|capfirst}}</br>
+	Votación: {{dato.get_voting}} </br>
+	Personas: </br>
+		<ul>
+		{% for user in users %}
+			{% if user in dato.get_users.all %}
+			<li>Nombre: {{user}}</li>
+			{% endif %}
+		{% empty %}
+		<li>Aún no hay usuarios en el censo</li>
+		{% endfor %}
+	</ul>
+	</li>
+	{% empty %}
+	<li>Aún no hay censos registrados</li>
+	{% endfor %}
+</ul>	
+{% endblock %}
