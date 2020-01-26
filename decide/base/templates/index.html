@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block encabezado %}
+	<h1>Decide</h1>
+{% endblock %}
+
+{% block contenido %}
+	<h2>Plataforma voto electrónico educativa</h2>
+	<p>
+		El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro, que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto.
+
+Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación, por lo que prima la simplicidad por encima de la eficiencia cuando sea posible. Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible.
+	</p>
+
+	<h2>Subsistemas, apps y proyecto base</h2>
+	<p>
+		El proyecto se divide en subsistemas, los cuales estarán desacoplados entre ellos. Para conseguir esto, los subsistemas se conectarán entre si mediante API y necesitamos un proyecto base donde configurar las ruts de estas API.
+
+Este proyecto Django estará dividido en apps (subsistemas y proyecto base), donde cualquier app podrá ser reemplazada individualmente.
+	</p>
+{% endblock %}
