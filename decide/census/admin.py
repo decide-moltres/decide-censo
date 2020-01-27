@@ -74,5 +74,8 @@ class CensusAdmin(admin.ModelAdmin):
 
     actions = [ export_census, viewVoters ]
 
+    object_edit_template = "edit_census.html"
+    object_delete_template = "delete_census.html"
+
 
 admin.site.register(Census, CensusAdmin)

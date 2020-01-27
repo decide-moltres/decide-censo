@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 19:43+0100\n"
+"POT-Creation-Date: 2020-01-27 23:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: base/templates/index.html:7
+msgid "Decide"
+msgstr "Decide"
+
+#: base/templates/index.html:11
+msgid "Plataforma de voto electrónico educativa"
+msgstr "Plataforma de voto electrónico educativa"
+
+#: base/templates/index.html:12
+msgid "Objetivo"
+msgstr "El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro, que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto. Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación, por lo que prima la simplicidad por encima de la eficiencia cuando sea posible. Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible."
+
+#: base/templates/index.html:16
+msgid "Subsistemas, apps y proyecto base"
+msgstr "Subsistemas, apps y proyecto base"
+
+#: base/templates/index.html:17
+msgid "Subsistemas"
+msgstr "El proyecto se divide en subsistemas, los cuales estarán desacoplados entre ellos. Para conseguir esto, los subsistemas se conectarán entre si mediante API y necesitamos un proyecto base donde configurar las ruts de estas API. Este proyecto django estará dividido en apps (subsistemas y proyecto base), donde cualquier app podrá ser reemplazada individualmente."
+
 #: booth/templates/booth/booth.html:19
 msgid "logout"
 msgstr "Finalizar sesión"
 
-#: booth/templates/booth/booth.html:33
+#: booth/templates/booth/booth.html:33 census/templates/view_voters.html:31
 msgid "Username"
 msgstr "Nombre de usuario"
 
@@ -46,6 +66,49 @@ msgstr "Error: "
 #: booth/templates/booth/booth.html:198
 msgid "Conglatulations. Your vote has been sent"
 msgstr "Congratulaciones. Tu voto ha sido enviado"
+
+#: census/templates/delete_census.html:19 census/templates/edit_census.html:19
+msgid "Home"
+msgstr "Inicio"
+
+#: census/templates/delete_census.html:20
+#: census/templates/delete_census.html:47 census/templates/edit_census.html:20
+#: census/templates/edit_census.html:47
+msgid "Edit census"
+msgstr "Editar censo"
+
+#: census/templates/delete_census.html:27 census/templates/edit_census.html:27
+msgid "Select the voting to assign to this census"
+msgstr "Seleccionar la votación a asignar en este censo"
+
+#: census/templates/delete_census.html:37 census/templates/edit_census.html:37
+msgid "Select the user to assign to this census"
+msgstr "Seleccionar el usuario a asignar a este censo"
+
+#: census/templates/delete_census.html:50 census/templates/edit_census.html:50
+#: census/templates/view_voters.html:58
+msgid "Back"
+msgstr "Atrás"
+
+#: census/templates/view_voters.html:23
+msgid "View Voters"
+msgstr "Lista votantes"
+
+#: census/templates/view_voters.html:29
+msgid "First name"
+msgstr "Nombre"
+
+#: census/templates/view_voters.html:30
+msgid "Last name"
+msgstr "Apellidos"
+
+#: census/templates/view_voters.html:32
+msgid "Email"
+msgstr "Correo"
+
+#: census/templates/view_voters.html:33
+msgid "Staff"
+msgstr "Empleado"
 
 #: decide/settings.py:163
 msgid "Español"

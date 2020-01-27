@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load i18n static %}
-{% include 'admin/change_form.html' %}
+{% include 'admin/object_delete_template.html' %}
+
+{% block extrahead %}
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link type="text/css" rel="stylesheet" href="{% static "census/style.css" %}" />
+{% endblock %}
 
 {% block content %}
   

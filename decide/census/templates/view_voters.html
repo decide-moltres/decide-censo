@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 {% load i18n static %}
+
+{% block extrahead %}
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link type="text/css" rel="stylesheet" href="{% static "census/style.css" %}" />
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
   <nav>
     <div class="nav-wrapper row teal darken-3">
       <div class="col s12">
-        <a href="/" class="breadcrumb">Home</a>
         <a href="" class="breadcrumb">View Voters</a>
       </div>
     </div>
@@ -16,21 +24,29 @@
 <table class="centered responsive-table">
   <table>
         <thead>
+        <tbody style="background: rgba(128, 255, 0, 0.3); border: 1px solid rgba(100, 200, 0, 0.3);">
           <tr>
               <th>{% trans 'First name' %} &nbsp; </th>
               <th>{% trans 'Last name' %}  &nbsp; </th>
               <th>{% trans 'Username' %}   &nbsp; </th>
               <th>{% trans 'Email' %}      &nbsp; </th>
+              <th>{% trans 'Staff' %}      &nbsp; </th>
           </tr>
+        </tbody>
         </thead>
   <tbody>        
   {% for voter in users %}
+  <thead>
+  <tbody style="background: rgba(255, 128, 0, 0.3); border: 1px solid rgba(200, 100, 0, 0.3);">
     <tr>
         <td>{{voter.first_name}} &nbsp;</td>
         <td>{{voter.last_name}}  &nbsp;</td>
         <td>{{voter.username}}   &nbsp;</td>
         <td>{{voter.email}}      &nbsp;</td>
+        <td>{{voter.is_staff}}   &nbsp;</td>
     </tr>
+  </tbody>
+  </thead>
   {% endfor %}
   </tbody>
   </table>
