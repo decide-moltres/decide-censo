@@ -13,6 +13,9 @@ class Census(models.Model):
     @classmethod
     def get_by_id(cls, cid):
         return Census.objects.get(pk=cid)
+    
+    def get_name(self):
+        return self.name
 
     def get_users(self):
         return self.voter_id
@@ -21,4 +24,7 @@ class Census(models.Model):
         return self.voting_id
     
     def __unicode__(self):
-        return '[{},{}]'.format(self.voting_id,self.voter_id)
+        users = []
+        for data in self.get_users().all():
+            users.append(data.username)
+        return '{}:[{},{}]'.format(self.get_name(),self.get_voting().name,users)
