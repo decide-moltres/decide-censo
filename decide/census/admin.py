@@ -38,8 +38,8 @@ def export_census(modeladmin, request, queryset):
     workbook.close()
 
 class CensusAdmin(admin.ModelAdmin):
-    list_display = ('voting_id', )
-    list_filter = ('voting_id', )
+    list_display = ('name', 'voting_id')
+    list_filter = ('name', 'voting_id')
 
     search_fields = ('voter_id', )
 
