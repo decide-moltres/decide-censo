@@ -20,5 +20,8 @@ class Census(models.Model):
     def get_voting(self):
         return self.voting_id
     
+    def get_name(self):
+        return self.name
+        
     def __unicode__(self):
         return '[{},{}]'.format(self.voting_id,self.voter_id)

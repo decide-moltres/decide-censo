@@ -12,7 +12,8 @@ from rest_framework.status import (
 
 from base.perms import UserIsStaff
 from .models import Census
-
+from django.contrib.auth.models import User
+from django.shortcuts import render
 
 class CensusCreate(generics.ListCreateAPIView):
     permission_classes = (UserIsStaff,)
@@ -50,3 +51,8 @@ class CensusDetail(generics.RetrieveDestroyAPIView):
         except ObjectDoesNotExist:
             return Response('Invalid voter', status=ST_401)
         return Response('Valid voter')
+
+def listCensus(request): 
+    census = Census.objects.all()
+    users = User.objects.all()
+    return render(request, 'list_census.html', {'census': census, 'users': users})
