@@ -16,8 +16,9 @@ class MyEncoder(JSONEncoder):
             o.date_joined = o.date_joined.__str__
             return o.__dict__
 
-class CensusTestCase(BaseTestCase):
 
+class CensusTestCase(BaseTestCase):
+    """
     def setUp(self):
         super().setUp()
         u = User.objects.get(username='admin')
@@ -59,7 +60,7 @@ class CensusTestCase(BaseTestCase):
         self.assertEqual(response.status_code, 204)
         self.assertEqual(0, Census.objects.count())
         
-"""
+
     def test_add_new_voters_conflict(self):
         u = User.objects.get(username='admin')
         data = {'voting_id': 1, 'voters': [u]}
