@@ -16,6 +16,7 @@ class MyEncoder(JSONEncoder):
             o.date_joined = o.date_joined.__str__
             return o.__dict__
 
+
 class CensusTestCase(BaseTestCase):
     """
     def setUp(self):
