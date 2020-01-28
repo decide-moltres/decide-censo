@@ -15,6 +15,7 @@ class Census(models.Model):
         return Census.objects.get(pk=cid)
     
     def get_name(self):
+        self.name=""
         return self.name
 
     def get_users(self):
