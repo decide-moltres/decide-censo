@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-27 23:35+0100\n"
+"POT-Creation-Date: 2020-01-28 22:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,46 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: base/templates/base.html:49
+msgid "Administrador"
+msgstr "Administrator"
+
+#: base/templates/base.html:57
+msgid "Authentication"
+msgstr "Authentication"
+
+#: base/templates/base.html:61
+msgid "Census"
+msgstr "Census"
+
+#: base/templates/base.html:64
+msgid "Mixnet"
+msgstr "Mixnet"
+
+#: base/templates/base.html:67
+msgid "Postproc"
+msgstr "Postproc"
+
+#: base/templates/base.html:70
+msgid "Store"
+msgstr "Store"
+
+#: base/templates/base.html:73
+msgid "Visualizer"
+msgstr "Visualizer"
+
+#: base/templates/base.html:76
+msgid "Voting"
+msgstr "Voting"
+
+#: base/templates/base.html:111
+msgid ""
+"Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de "
+"Sevilla &copy;2020"
+msgstr ""
+"Non-profit project of the EGC subject of the University of Seville & copy; "
+"2020"
 
 #: base/templates/index.html:7
 msgid "Decide"
@@ -27,15 +67,26 @@ msgstr "Educational electronic voting platform"
 
 #: base/templates/index.html:12
 msgid "Objetivo"
-msgstr "The objective of this project is to implement a secure electronic voting platform, which complies with a series of basic guarantees, such as anonymity and the secrecy of voting. It is an educational project, designed for the study of voting systems, so that simplicity prevails over efficiency when possible. Therefore some deficiencies are assumed to allow it to be understandable and extensible."
+msgstr ""
+"The objective of this project is to implement a secure electronic voting "
+"platform, which complies with a series of basic guarantees, such as "
+"anonymity and the secrecy of voting. It is an educational project, designed "
+"for the study of voting systems, so that simplicity prevails over efficiency "
+"when possible. Therefore some deficiencies are assumed to allow it to be "
+"understandable and extensible."
 
-#: base/templates/index.html:18
+#: base/templates/index.html:14
 msgid "Subsistemas, apps y proyecto base"
 msgstr "Subsystems, apps and base project"
 
-#: base/templates/index.html:19
+#: base/templates/index.html:15
 msgid "Subsistemas"
-msgstr "The project is divided into subsystems, which will be decoupled from each other. To achieve this, the subsystems will connect to each other through APIs and we need a base project to configure the routing of these APIs. This Django project will be divided into apps (subsystems and base project), where any app can be replaced individually."
+msgstr ""
+"The project is divided into subsystems, which will be decoupled from each "
+"other. To achieve this, the subsystems will connect to each other through "
+"APIs and we need a base project to configure the routing of these APIs. This "
+"Django project will be divided into apps (subsystems and base project), "
+"where any app can be replaced individually."
 
 #: booth/templates/booth/booth.html:19
 msgid "logout"
@@ -88,6 +139,34 @@ msgstr "Select the user to assign to this census"
 #: census/templates/view_voters.html:58
 msgid "Back"
 msgstr "Back"
+
+#: census/templates/list_census.html:4
+msgid "Censos"
+msgstr "Census"
+
+#: census/templates/list_census.html:6
+msgid "Lista censos"
+msgstr "List census"
+
+#: census/templates/list_census.html:12
+msgid "Votación"
+msgstr "Voting"
+
+#: census/templates/list_census.html:13
+msgid "Personas"
+msgstr "People"
+
+#: census/templates/list_census.html:17
+msgid "Nombre"
+msgstr "Name"
+
+#: census/templates/list_census.html:20
+msgid "Aún no hay usuarios en el censo"
+msgstr "There are no users in the census yet"
+
+#: census/templates/list_census.html:25
+msgid "Aún no hay censos registrados"
+msgstr "There are no registered censuses yet"
 
 #: census/templates/view_voters.html:23
 msgid "View Voters"

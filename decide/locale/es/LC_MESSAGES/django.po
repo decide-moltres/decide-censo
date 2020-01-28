@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-27 23:42+0100\n"
+"POT-Creation-Date: 2020-01-28 22:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: base/templates/base.html:49
+msgid "Administrador"
+msgstr "Administrador"
+
+#: base/templates/base.html:57
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: base/templates/base.html:61
+msgid "Census"
+msgstr "Censo"
+
+#: base/templates/base.html:64
+msgid "Mixnet"
+msgstr "Recuento"
+
+#: base/templates/base.html:67
+msgid "Postproc"
+msgstr "Postprocesado"
+
+#: base/templates/base.html:70
+msgid "Store"
+msgstr "Almacenamiento"
+
+#: base/templates/base.html:73
+msgid "Visualizer"
+msgstr "Visualización"
+
+#: base/templates/base.html:76
+msgid "Voting"
+msgstr "Votación"
+
+#: base/templates/base.html:111
+msgid ""
+"Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de "
+"Sevilla &copy;2020"
+msgstr ""
+"Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de "
+"Sevilla &copy;2020"
 
 #: base/templates/index.html:7
 msgid "Decide"
@@ -28,15 +68,26 @@ msgstr "Plataforma de voto electrónico educativa"
 
 #: base/templates/index.html:12
 msgid "Objetivo"
-msgstr "El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro, que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto. Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación, por lo que prima la simplicidad por encima de la eficiencia cuando sea posible. Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible."
+msgstr ""
+"El objetivo de este proyecto es implementar una plataforma de voto "
+"electrónico seguro, que cumpla una serie de garantías básicas, como la "
+"anonimicidad y el secreto del voto. Se trata de un proyecto educativo, "
+"pensado para el estudio de sistemas de votación, por lo que prima la "
+"simplicidad por encima de la eficiencia cuando sea posible. Por lo tanto se "
+"asumen algunas carencias para permitir que sea entendible y extensible."
 
-#: base/templates/index.html:16
+#: base/templates/index.html:14
 msgid "Subsistemas, apps y proyecto base"
 msgstr "Subsistemas, apps y proyecto base"
 
-#: base/templates/index.html:17
+#: base/templates/index.html:15
 msgid "Subsistemas"
-msgstr "El proyecto se divide en subsistemas, los cuales estarán desacoplados entre ellos. Para conseguir esto, los subsistemas se conectarán entre si mediante API y necesitamos un proyecto base donde configurar las ruts de estas API. Este proyecto django estará dividido en apps (subsistemas y proyecto base), donde cualquier app podrá ser reemplazada individualmente."
+msgstr ""
+"El proyecto se divide en subsistemas, los cuales estarán desacoplados entre "
+"ellos. Para conseguir esto, los subsistemas se conectarán entre si mediante "
+"API y necesitamos un proyecto base donde configurar las ruts de estas API. "
+"Este proyecto django estará dividido en apps (subsistemas y proyecto base), "
+"donde cualquier app podrá ser reemplazada individualmente."
 
 #: booth/templates/booth/booth.html:19
 msgid "logout"
@@ -89,6 +140,34 @@ msgstr "Seleccionar el usuario a asignar a este censo"
 #: census/templates/view_voters.html:58
 msgid "Back"
 msgstr "Atrás"
+
+#: census/templates/list_census.html:4
+msgid "Censos"
+msgstr "Censo"
+
+#: census/templates/list_census.html:6
+msgid "Lista censos"
+msgstr "Lista censos"
+
+#: census/templates/list_census.html:12
+msgid "Votación"
+msgstr "Votación"
+
+#: census/templates/list_census.html:13
+msgid "Personas"
+msgstr "Personas"
+
+#: census/templates/list_census.html:17
+msgid "Nombre"
+msgstr "Nombre"
+
+#: census/templates/list_census.html:20
+msgid "Aún no hay usuarios en el censo"
+msgstr "Aún no hay usuarios en el censo"
+
+#: census/templates/list_census.html:25
+msgid "Aún no hay censos registrados"
+msgstr "Aún no hay censos registrados"
 
 #: census/templates/view_voters.html:23
 msgid "View Voters"

@@ -1,4 +1,6 @@
 {% load static from staticfiles %}
+{% load i18n static %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +46,7 @@
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
     <div class="container">
-     <a href="/admin" class="btn btn-outline-warning" role="button" aria-pressed="true" style ="margin-right:40px;">Administrador</a>
+     <a href="/admin" class="btn btn-outline-warning" role="button" aria-pressed="true" style ="margin-right:40px;">{% trans 'Administrador' %}</a>
       <a class="navbar-brand" href="/" style ="border: 2px solid white; padding: 10px; border-radius: 10px" >Decide</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,26 +54,26 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/pcGames">Authentication    
+            <a class="nav-link" href="/pcGames">{% trans 'Authentication' %}    
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/census/listCensus">Census</a>
+            <a class="nav-link" href="/census/listCensus">{% trans 'Census' %}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/psxGames">Mixnet</a>
+            <a class="nav-link" href="/psxGames">{% trans 'Mixnet' %}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/nintendoGames">Postproc</a>
+            <a class="nav-link" href="/nintendoGames">{% trans 'Postproc' %}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/nintendoGames">Store</a>
+            <a class="nav-link" href="/nintendoGames">{% trans 'Store' %}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/nintendoGames">Visualizer</a>
+            <a class="nav-link" href="/nintendoGames">{% trans 'Visualizer' %}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/nintendoGames">Voting</a>
+            <a class="nav-link" href="/nintendoGames">{% trans 'Voting' %}</a>
           </li>
         </ul>
       </div>
@@ -106,7 +108,7 @@
 <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
   
   <footer>
-    <p>Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de Sevilla &copy;2020</p>
+    <p>{% trans 'Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de Sevilla &copy;2020' %}</p>
   </footer>
    
 </body>
