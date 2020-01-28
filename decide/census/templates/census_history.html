@@ -24,8 +24,10 @@
   <br>
 <h5> &nbsp; {% trans 'History' %}</h5>
   
+<br>
+
 {% if action_list %}
-    <table class="centered">
+    <table class="centered responsive-table">
       <tbody style="background: rgba(128, 255, 0, 0.3); border: 1px solid rgba(100, 200, 0, 0.3);">
         <tr>
             <th colspan="2"> &nbsp; {% trans 'Date/time' %} &nbsp;</th>
@@ -54,6 +56,6 @@
 {% endif %}
 <br>
 <br>
-<td><a href="" class="waves-effect waves-light btn">{% trans "Back" %}</a></td>
+<!--<td><a href="" class="waves-effect waves-light btn">{% trans "Back" %}</a></td>-->
 </div>
 {% endblock %}
