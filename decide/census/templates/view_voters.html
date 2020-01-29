@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load i18n static %}
 
 {% block extrahead %}
@@ -9,20 +9,21 @@
     <link type="text/css" rel="stylesheet" href="{% static "census/style.css" %}" />
 {% endblock %}
 
-{% block content %}
+{% block contenido %}
 
 <div class="container">
   <nav>
     <div class="nav-wrapper row teal darken-3">
       <div class="col s12">
-        <a href="" class="breadcrumb">View Voters</a>
+        <div class="col s12"><a href="/" class="breadcrumb">{% trans 'Home' %}</a>
+            <a href="" class="breadcrumb">{% trans 'List census' %}</a>
       </div>
     </div>
-  </nav>
+  </nav> <br>
 
-<h4>{% trans 'View Voters' %}</h4>
+<h4>{% trans 'View Voters' %}</h4><br>
 <table class="centered responsive-table">
-  <table>
+  <table style="width:100%">
         <thead>
         <tbody style="background: rgba(128, 255, 0, 0.3); border: 1px solid rgba(100, 200, 0, 0.3);">
           <tr>
@@ -53,7 +54,6 @@
 </table>
 </div>
 <div>
-<br>
 <br>
 <td><a href="" class="waves-effect waves-light btn">{% trans "Back" %}</a></td>
 </div>

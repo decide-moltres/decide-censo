@@ -1,13 +1,16 @@
 .census {
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
 .table, th, td {
+    table-layout: fixed;
+    width: 100px;
     border: 1px solid black;
     border-collapse: collapse;
   }
 
   th, td {
-    padding: 15px;
+    padding: 20px;
   }
+

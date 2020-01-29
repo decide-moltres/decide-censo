@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from voting.models import Voting
 
 class Census(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, default='')
     voting_id = models.ForeignKey(Voting,on_delete=models.CASCADE)
     voter_id = models.ManyToManyField(User)
 
@@ -13,6 +13,9 @@ class Census(models.Model):
     @classmethod
     def get_by_id(cls, cid):
         return Census.objects.get(pk=cid)
+    
+    def get_name(self):
+        return self.name
 
     def get_users(self):
         return self.voter_id
@@ -24,4 +27,7 @@ class Census(models.Model):
         return self.name
         
     def __unicode__(self):
-        return '[{},{}]'.format(self.voting_id,self.voter_id)
+        users = []
+        for data in self.get_users().all():
+            users.append(data.username)
+        return '{}:[{},{}]'.format(self.get_name(),self.get_voting().name,users)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-28 22:50+0100\n"
+"POT-Creation-Date: 2020-01-29 22:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "logout"
 msgstr "Finalizar sesión"
 
-#: booth/templates/booth/booth.html:33 census/templates/view_voters.html:31
+#: booth/templates/booth/booth.html:33 census/templates/view_voters.html:32
 msgid "Username"
 msgstr "Nombre de usuario"
 
@@ -118,9 +118,57 @@ msgstr "Error: "
 msgid "Conglatulations. Your vote has been sent"
 msgstr "Congratulaciones. Tu voto ha sido enviado"
 
+#: census/templates/census_history.html:19
 #: census/templates/delete_census.html:19 census/templates/edit_census.html:19
+#: census/templates/view_voters.html:18
 msgid "Home"
 msgstr "Inicio"
+
+#: census/templates/census_history.html:20
+msgid "Census history"
+msgstr "Historial del censo"
+
+#: census/templates/census_history.html:26
+msgid "History"
+msgstr "Historial"
+
+#: census/templates/census_history.html:35
+msgid "Date/time"
+msgstr "Fecha/Hora"
+
+#: census/templates/census_history.html:36
+#, fuzzy
+#| msgid "Username"
+msgid "User"
+msgstr "Nombre de usuario"
+
+#: census/templates/census_history.html:37
+msgid "Name"
+msgstr "Nombre"
+
+#: census/templates/census_history.html:38 census/templates/view_voters.html:33
+msgid "Email"
+msgstr "Correo"
+
+#: census/templates/census_history.html:39 census/templates/view_voters.html:34
+msgid "Staff"
+msgstr "Empleado"
+
+#: census/templates/census_history.html:40
+msgid "Action"
+msgstr "Acción"
+
+#: census/templates/census_history.html:58
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr "Este objeto no tiene historial de cambios."
+
+#: census/templates/census_history.html:62
+#: census/templates/delete_census.html:50 census/templates/edit_census.html:50
+#: census/templates/view_voters.html:58
+msgid "Back"
+msgstr "Atrás"
 
 #: census/templates/delete_census.html:20
 #: census/templates/delete_census.html:47 census/templates/edit_census.html:20
@@ -135,11 +183,6 @@ msgstr "Seleccionar la votación a asignar en este censo"
 #: census/templates/delete_census.html:37 census/templates/edit_census.html:37
 msgid "Select the user to assign to this census"
 msgstr "Seleccionar el usuario a asignar a este censo"
-
-#: census/templates/delete_census.html:50 census/templates/edit_census.html:50
-#: census/templates/view_voters.html:58
-msgid "Back"
-msgstr "Atrás"
 
 #: census/templates/list_census.html:4
 msgid "Censos"
@@ -169,25 +212,23 @@ msgstr "Aún no hay usuarios en el censo"
 msgid "Aún no hay censos registrados"
 msgstr "Aún no hay censos registrados"
 
-#: census/templates/view_voters.html:23
+#: census/templates/view_voters.html:19
+#, fuzzy
+#| msgid "Lista censos"
+msgid "List census"
+msgstr "Lista censos"
+
+#: census/templates/view_voters.html:24
 msgid "View Voters"
 msgstr "Lista votantes"
 
-#: census/templates/view_voters.html:29
+#: census/templates/view_voters.html:30
 msgid "First name"
 msgstr "Nombre"
 
-#: census/templates/view_voters.html:30
+#: census/templates/view_voters.html:31
 msgid "Last name"
 msgstr "Apellidos"
-
-#: census/templates/view_voters.html:32
-msgid "Email"
-msgstr "Correo"
-
-#: census/templates/view_voters.html:33
-msgid "Staff"
-msgstr "Empleado"
 
 #: decide/settings.py:163
 msgid "Español"
