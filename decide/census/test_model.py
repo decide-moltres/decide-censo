@@ -4,7 +4,6 @@ from django.test import TestCase
 from .models import Census
 from voting.models import Voting, Question
 from base.models import Auth
-from base import mods
 
 class CensusModelTestCase(TestCase):
     

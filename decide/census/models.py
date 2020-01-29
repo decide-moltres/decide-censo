@@ -21,8 +21,7 @@ class Census(models.Model):
         return self.voter_id
 
     def get_voting(self):
-        return self.voting_id
-    
+        return self.voting_id  
     def __unicode__(self):
         users = []
         for data in self.get_users().all():

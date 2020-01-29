@@ -32,8 +32,7 @@ def export_census(modeladmin, request, queryset):
         s = ""
         worksheet.write(row, col + 2, str(p))
         p = []
-        row += 1
-       
+        row += 1     
     print(n)
     workbook.close()
 
