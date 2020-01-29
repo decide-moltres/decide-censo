@@ -1,15 +1,10 @@
 import random
 from django.contrib.auth.models import User
 from django.test import TestCase
-from rest_framework.test import APIClient
-
 from .models import Census
 from voting.models import Voting, Question
 from base.models import Auth
 from base import mods
-from base.tests import BaseTestCase
-
-from django.contrib.auth.models import User
 
 class CensusModelTestCase(TestCase):
     
