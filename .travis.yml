@@ -22,6 +22,12 @@ script:
 branches:
   only:
   - master
+notifications:
+  slack:
+    on_success: always
+    on_failure: always
+  email:
+    - antoniomaciaszambrano24@gmail.com
 deploy:
   provider: heroku
   app: decide-moltres-censo
