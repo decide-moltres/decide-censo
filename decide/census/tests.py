@@ -11,8 +11,11 @@ from django.contrib.auth.models import User
 from json import JSONEncoder
 import datetime
 
+'''
 import unittest
 from selenium import webdriver
+
+Prueba test selenium
 
 class TestSignup(unittest.TestCase):
 
@@ -20,7 +23,7 @@ class TestSignup(unittest.TestCase):
         self.driver = webdriver.Firefox()
         
     def test_signup_fire(self):
-        self.driver.get("http://localhost:5000/admin/login/?next=/admin/")
+        self.driver.get("http://localhost:8000/admin/login/?next=/admin/")
         self.driver.find_element_by_id('id_username').send_keys("practica")
         self.driver.find_element_by_id('id_password').send_keys("practica")
         self.driver.find_element_by_id('login-form').click()
@@ -30,6 +33,7 @@ class TestSignup(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+'''
 
 class MyEncoder(JSONEncoder):
         def default(self, o):
@@ -58,6 +62,12 @@ class CensusTestCase(BaseTestCase):
         response = self.client.get('/census/{}/?voter_id={}'.format(1, 1), format='json')
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json(), 'Invalid voter')
+
+'''
+    def test_list_census(self):
+        response = self.client.get('census/listCensus')
+        self.assertEqual(response.status_code, 200)
+'''
 
     def test_list_voting(self):
         response = self.client.get('/census/?voting_id={}'.format(1), format='json')

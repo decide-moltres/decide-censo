@@ -72,7 +72,7 @@ class CensusAdmin(admin.ModelAdmin):
 
     search_fields = ('voter_id', )
 
-    actions = [ export_census, viewVoters ]
+    actions = [ export_census ]
 
     object_edit_template = "edit_census.html"
     object_delete_template = "delete_census.html"
