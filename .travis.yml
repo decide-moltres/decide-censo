@@ -22,12 +22,12 @@ script:
 branches:
   only:
   - master
-notifications:
-  email:
-    recipients:
-    - antoniomaciaszambrano24@gmail.com
-    on_success: always
-    on_failure: always
+notifications:  
+email:  
+  recipients:  
+  - antoniomaciaszambrano24@gmail.com  
+  on_success: always  
+  on_failure: always
 deploy:
   provider: heroku
   app: decide-moltres-censo
