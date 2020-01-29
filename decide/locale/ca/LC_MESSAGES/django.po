@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-29 18:28+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: booth/templates/booth/booth.html:19
+msgid "logout"
+msgstr "Tancar sessió"
+
+#: booth/templates/booth/booth.html:33
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#: booth/templates/booth/booth.html:41
+msgid "Password"
+msgstr "Contrasenya"
+
+#: booth/templates/booth/booth.html:49
+msgid "Login"
+msgstr "Iniciar Sessió"
+
+#: booth/templates/booth/booth.html:64
+msgid "Vote"
+msgstr "Votar"
+
+#: booth/templates/booth/booth.html:160 booth/templates/booth/booth.html:170
+#: booth/templates/booth/booth.html:201
+msgid "Error: "
+msgstr "Error: "
+
+#: booth/templates/booth/booth.html:198
+msgid "Conglatulations. Your vote has been sent"
+msgstr "Felicitats El vostre vot s’ha enviat"
+
+#: decide/settings.py:163
+msgid "Español"
+msgstr "Español"
+
+#: decide/settings.py:164
+msgid "English"
+msgstr "Anglès"
+
+#: decide/settings.py:165
+msgid "Català"
+msgstr "Català"
+
+#: decide/settings.py:166
+msgid "Galego"
+msgstr "Gallego"
+
+#: decide/settings.py:167
+msgid "Euskera"
+msgstr "Euskera"
