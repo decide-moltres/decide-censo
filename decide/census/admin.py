@@ -29,7 +29,6 @@ def export_census(modeladmin, request, queryset):
                 p.append(item2[2])
         worksheet.write(row, col, str(item[0]))
         worksheet.write(row, col + 1, str(item[1]))
-        s = ""
         worksheet.write(row, col + 2, str(p))
         p = []
         row += 1     
