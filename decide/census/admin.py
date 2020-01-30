@@ -13,6 +13,9 @@ from rest_framework.status import (
 )
 
 from .models import Census
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+
 from voting.models import Voting
 from django.contrib.auth.models import User
 
@@ -25,8 +28,9 @@ def export_census(modeladmin, request, queryset):
     cur = con.cursor()
     cur2 = con.cursor()
 
-    cur.execute("SELECT * FROM census_census");
-    cur2.execute("SELECT * FROM census_census_voter_id");
+
+    cur.execute("SELECT * FROM census_census")
+    cur2.execute("SELECT * FROM census_census_voter_id")
     n = cur.fetchall()
     n2 = cur2.fetchall()
     workbook = xlsxwriter.Workbook('Decide_census.xlsx')
@@ -45,9 +49,16 @@ def export_census(modeladmin, request, queryset):
         worksheet.write(row, col + 1, str(item[1]))
         worksheet.write(row, col + 2, str(p))
         p = []
-        row += 1     
+        row += 1
+
     print(n)
     workbook.close()
+
+
+class CensusResource(resources.ModelResource):
+    class Meta:
+        model= Census
+
 
 def viewVoters(modeladmin, request, queryset, *voting_id):
 
@@ -94,7 +105,7 @@ def viewVoters(modeladmin, request, queryset, *voting_id):
 #             obj.save()
 
 
-class CensusAdmin(admin.ModelAdmin):
+class CensusAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('name', 'voting_id')
     list_filter = ('name', 'voting_id')
 
@@ -105,6 +116,7 @@ class CensusAdmin(admin.ModelAdmin):
     object_edit_template = "edit_census.html"
     object_delete_template = "delete_census.html"
     object_history_template = "census_history.html"
+
 
 
 admin.site.register(Census, CensusAdmin)
