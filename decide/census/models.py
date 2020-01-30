@@ -13,7 +13,7 @@ class Census(models.Model):
     @classmethod
     def get_by_id(cls, cid):
         return Census.objects.get(pk=cid)
-    
+        
     def get_name(self):
         return self.name
 
