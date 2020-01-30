@@ -35,6 +35,37 @@ def export_census(modeladmin, request, queryset):
     print(n)
     workbook.close()
 
+# def corrector_nombres(modeladmin, request, queryset):
+
+#     #Me traigo todos los censos
+#     con = psycopg2.connect(database="postgres", user="decide", password="decide", host="127.0.0.1", port="5432")
+#     print("Database opened successfully")
+#     cur = con.cursor()
+
+#     cur.execute("SELECT * FROM census_census");
+#     n = cur.fetchall()
+#     print("Census")
+#     print(n)
+
+#     #Lista de palabras malas:
+#     palabras = ["fuck", "bitch", "stupid"]
+
+#     for e in n:
+#         id = e[0] #Hay que revisar esto tras el cambio de modelo, despues debe funcionar
+#         print(id)
+#         #Obtengo el objeto
+#         obj = Census.objects.get(pk=id)
+#         #Cuando pueda probar, mirar que puedo cambiar el nombre y guardarlo
+
+#         #Miro que su nombre no este en la lista mala
+#         nombre = obj.name()
+#         if nombre in lista_palabras_malas:
+#             new_name = "nombre "
+#             new_name = new_name + obj.voting_id
+#             obj.name = new_name
+#             obj.save()
+
+
 class CensusAdmin(admin.ModelAdmin):
     list_display = ('name', 'voting_id')
     list_filter = ('name', 'voting_id')
