@@ -105,7 +105,7 @@ def viewVoters(modeladmin, request, queryset, *voting_id):
 #             obj.save()
 
 
-class CensusAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+class CensusAdmin(admin.ModelAdmin):
     list_display = ('name', 'voting_id')
     list_filter = ('name', 'voting_id')
 
