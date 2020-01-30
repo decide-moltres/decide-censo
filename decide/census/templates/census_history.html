@@ -10,24 +10,26 @@
     <link type="text/css" rel="stylesheet" href="{% static "census/style.css" %}" />
 {% endblock %}
 
-{% block content %}
+{% block contenido %}
 
  <div class="container">
   <nav>
     <div class="nav-wrapper row teal darken-3">
       <div class="col s12">
+        <div class="col s12"><a href="/" class="breadcrumb">{% trans 'Home' %}</a>
             <a href="" class="breadcrumb">{% trans "Census history" %}</a>
       </div>
       </div>
     </div>
   </nav>
   <br>
-<h5> &nbsp; {% trans 'History' %}</h5>
+<h5> {% trans 'History' %}</h5>
   
 <br>
 
 {% if action_list %}
     <table class="centered responsive-table">
+      <table style="width:100%">
       <tbody style="background: rgba(128, 255, 0, 0.3); border: 1px solid rgba(100, 200, 0, 0.3);">
         <tr>
             <th colspan="2"> &nbsp; {% trans 'Date/time' %} &nbsp;</th>
@@ -50,6 +52,7 @@
         </tr>
         {% endfor %}
         </tbody>
+      </table>
     </table>
 {% else %}
     <p>{% trans "This object doesn't have a change history. It probably wasn't added via this admin site." %}</p>

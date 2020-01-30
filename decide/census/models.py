@@ -13,7 +13,7 @@ class Census(models.Model):
     @classmethod
     def get_by_id(cls, cid):
         return Census.objects.get(pk=cid)
-    
+        
     def get_name(self):
         return self.name
 
@@ -23,6 +23,9 @@ class Census(models.Model):
     def get_voting(self):
         return self.voting_id
     
+    def get_name(self):
+        return self.name
+        
     def __unicode__(self):
         users = []
         for data in self.get_users().all():

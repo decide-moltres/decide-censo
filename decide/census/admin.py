@@ -1,6 +1,20 @@
 from django.contrib import admin
+from django.shortcuts import redirect, render
+from rest_framework import serializers
+from rest_framework.response import Response
+from rest_framework import generics
+
+from rest_framework.status import (
+        HTTP_201_CREATED as ST_201,
+        HTTP_204_NO_CONTENT as ST_204,
+        HTTP_400_BAD_REQUEST as ST_400,
+        HTTP_401_UNAUTHORIZED as ST_401,
+        HTTP_409_CONFLICT as ST_409
+)
 
 from .models import Census
+from voting.models import Voting
+from django.contrib.auth.models import User
 
 import psycopg2
 import xlsxwriter
@@ -29,13 +43,56 @@ def export_census(modeladmin, request, queryset):
                 p.append(item2[2])
         worksheet.write(row, col, str(item[0]))
         worksheet.write(row, col + 1, str(item[1]))
-        s = ""
         worksheet.write(row, col + 2, str(p))
         p = []
-        row += 1
-       
+        row += 1     
     print(n)
     workbook.close()
+
+def viewVoters(modeladmin, request, queryset, *voting_id):
+
+    voter = request.GET.get('voter_id')
+    #voter = Voter.objects.all()
+    #voters = Census.objects.get(voter_id=voter)
+    users = User.objects.all()
+    census = set(Census.objects.filter(voting_id=request.GET.get('voting_id')))
+
+    for censo in census:
+
+        usuario = Census.objects.filter(voting_id=voting_id).values_list('voter_id', flat=True)
+        users.append(usuario)
+
+    return render(request, "view_voters.html", {'users': users})    
+# def corrector_nombres(modeladmin, request, queryset):
+
+#     #Me traigo todos los censos
+#     con = psycopg2.connect(database="postgres", user="decide", password="decide", host="127.0.0.1", port="5432")
+#     print("Database opened successfully")
+#     cur = con.cursor()
+
+#     cur.execute("SELECT * FROM census_census");
+#     n = cur.fetchall()
+#     print("Census")
+#     print(n)
+
+#     #Lista de palabras malas:
+#     palabras = ["fuck", "bitch", "stupid"]
+
+#     for e in n:
+#         id = e[0] #Hay que revisar esto tras el cambio de modelo, despues debe funcionar
+#         print(id)
+#         #Obtengo el objeto
+#         obj = Census.objects.get(pk=id)
+#         #Cuando pueda probar, mirar que puedo cambiar el nombre y guardarlo
+
+#         #Miro que su nombre no este en la lista mala
+#         nombre = obj.name()
+#         if nombre in lista_palabras_malas:
+#             new_name = "nombre "
+#             new_name = new_name + obj.voting_id
+#             obj.name = new_name
+#             obj.save()
+
 
 class CensusAdmin(admin.ModelAdmin):
     list_display = ('name', 'voting_id')
@@ -43,9 +100,11 @@ class CensusAdmin(admin.ModelAdmin):
 
     search_fields = ('voter_id', )
 
-    object_history_template = "census_history.html"
+    actions = [ export_census, viewVoters ]
 
-    actions = [ export_census ]
+    object_edit_template = "edit_census.html"
+    object_delete_template = "delete_census.html"
+    object_history_template = "census_history.html"
 
 
 admin.site.register(Census, CensusAdmin)

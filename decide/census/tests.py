@@ -1,15 +1,30 @@
-import random
-from django.contrib.auth.models import User
-from django.test import TestCase
-from rest_framework.test import APIClient
-
 from .models import Census
-from base import mods
 from base.tests import BaseTestCase
-
-from django.contrib.auth.models import User
 from json import JSONEncoder
-import datetime
+
+'''
+import unittest
+from selenium import webdriver
+
+Prueba test selenium
+
+class TestSignup(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        
+    def test_signup_fire(self):
+        self.driver.get("http://localhost:8000/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("practica")
+        self.driver.find_element_by_id('id_password').send_keys("practica")
+        self.driver.find_element_by_id('login-form').click()
+        self.assertTrue(len(self.driver.find_elements_by_id('user-tools'))>0) 
+    def tearDown(self):
+        self.driver.quit
+
+if __name__ == '__main__':
+    unittest.main()
+'''
 
 class MyEncoder(JSONEncoder):
         def default(self, o):
@@ -39,6 +54,12 @@ class CensusTestCase(BaseTestCase):
         response = self.client.get('/census/{}/?voter_id={}'.format(1, 1), format='json')
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json(), 'Invalid voter')
+
+'''
+    def test_list_census(self):
+        response = self.client.get('census/listCensus')
+        self.assertEqual(response.status_code, 200)
+'''
 
     def test_list_voting(self):
         response = self.client.get('/census/?voting_id={}'.format(1), format='json')

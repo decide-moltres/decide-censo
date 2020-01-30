@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block encabezado %}
+	<h1>{% trans 'Decide' %}</h1>
+{% endblock %}
+
+{% block contenido %}
+	<h2>{% trans 'Plataforma de voto electrónico educativa' %}</h2>
+	<p>{% trans 'Objetivo' %}</p>
+
+	<h2>{% trans 'Subsistemas, apps y proyecto base' %}</h2>
+	<p>{% trans 'Subsistemas' %}</p>
+{% endblock %}
