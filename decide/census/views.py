@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import permission_required
 from django.db.utils import IntegrityError
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import generics
@@ -9,9 +10,13 @@ from rest_framework.status import (
         HTTP_409_CONFLICT as ST_409
 )
 
+from census import models
 from base.perms import UserIsStaff
 from .models import Census
-
+import csv, io
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.shortcuts import render
 
 class CensusCreate(generics.ListCreateAPIView):
     permission_classes = (UserIsStaff,)
@@ -49,3 +54,8 @@ class CensusDetail(generics.RetrieveDestroyAPIView):
         except ObjectDoesNotExist:
             return Response('Invalid voter', status=ST_401)
         return Response('Valid voter')
+
+def listCensus(request): 
+    census = Census.objects.all()
+    users = User.objects.all()
+    return render(request, 'list_census.html', {'census': census, 'users': users})

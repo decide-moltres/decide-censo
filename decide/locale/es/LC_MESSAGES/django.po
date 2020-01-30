@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 19:43+0100\n"
+"POT-Creation-Date: 2020-01-29 22:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: base/templates/base.html:49
+msgid "Administrador"
+msgstr "Administrador"
+
+#: base/templates/base.html:57
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: base/templates/base.html:61
+msgid "Census"
+msgstr "Censo"
+
+#: base/templates/base.html:64
+msgid "Mixnet"
+msgstr "Recuento"
+
+#: base/templates/base.html:67
+msgid "Postproc"
+msgstr "Postprocesado"
+
+#: base/templates/base.html:70
+msgid "Store"
+msgstr "Almacenamiento"
+
+#: base/templates/base.html:73
+msgid "Visualizer"
+msgstr "Visualización"
+
+#: base/templates/base.html:76
+msgid "Voting"
+msgstr "Votación"
+
+#: base/templates/base.html:111
+msgid ""
+"Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de "
+"Sevilla &copy;2020"
+msgstr ""
+"Proyecto sin ánimo de lucro de la asignatura EGC de la universidad de "
+"Sevilla &copy;2020"
+
+#: base/templates/index.html:7
+msgid "Decide"
+msgstr "Decide"
+
+#: base/templates/index.html:11
+msgid "Plataforma de voto electrónico educativa"
+msgstr "Plataforma de voto electrónico educativa"
+
+#: base/templates/index.html:12
+msgid "Objetivo"
+msgstr ""
+"El objetivo de este proyecto es implementar una plataforma de voto "
+"electrónico seguro, que cumpla una serie de garantías básicas, como la "
+"anonimicidad y el secreto del voto. Se trata de un proyecto educativo, "
+"pensado para el estudio de sistemas de votación, por lo que prima la "
+"simplicidad por encima de la eficiencia cuando sea posible. Por lo tanto se "
+"asumen algunas carencias para permitir que sea entendible y extensible."
+
+#: base/templates/index.html:14
+msgid "Subsistemas, apps y proyecto base"
+msgstr "Subsistemas, apps y proyecto base"
+
+#: base/templates/index.html:15
+msgid "Subsistemas"
+msgstr ""
+"El proyecto se divide en subsistemas, los cuales estarán desacoplados entre "
+"ellos. Para conseguir esto, los subsistemas se conectarán entre si mediante "
+"API y necesitamos un proyecto base donde configurar las ruts de estas API. "
+"Este proyecto django estará dividido en apps (subsistemas y proyecto base), "
+"donde cualquier app podrá ser reemplazada individualmente."
+
 #: booth/templates/booth/booth.html:19
 msgid "logout"
 msgstr "Finalizar sesión"
 
-#: booth/templates/booth/booth.html:33
+#: booth/templates/booth/booth.html:33 census/templates/view_voters.html:32
 msgid "Username"
 msgstr "Nombre de usuario"
 
@@ -46,6 +117,118 @@ msgstr "Error: "
 #: booth/templates/booth/booth.html:198
 msgid "Conglatulations. Your vote has been sent"
 msgstr "Congratulaciones. Tu voto ha sido enviado"
+
+#: census/templates/census_history.html:19
+#: census/templates/delete_census.html:19 census/templates/edit_census.html:19
+#: census/templates/view_voters.html:18
+msgid "Home"
+msgstr "Inicio"
+
+#: census/templates/census_history.html:20
+msgid "Census history"
+msgstr "Historial del censo"
+
+#: census/templates/census_history.html:26
+msgid "History"
+msgstr "Historial"
+
+#: census/templates/census_history.html:35
+msgid "Date/time"
+msgstr "Fecha/Hora"
+
+#: census/templates/census_history.html:36
+#, fuzzy
+#| msgid "Username"
+msgid "User"
+msgstr "Nombre de usuario"
+
+#: census/templates/census_history.html:37
+msgid "Name"
+msgstr "Nombre"
+
+#: census/templates/census_history.html:38 census/templates/view_voters.html:33
+msgid "Email"
+msgstr "Correo"
+
+#: census/templates/census_history.html:39 census/templates/view_voters.html:34
+msgid "Staff"
+msgstr "Empleado"
+
+#: census/templates/census_history.html:40
+msgid "Action"
+msgstr "Acción"
+
+#: census/templates/census_history.html:58
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr "Este objeto no tiene historial de cambios."
+
+#: census/templates/census_history.html:62
+#: census/templates/delete_census.html:50 census/templates/edit_census.html:50
+#: census/templates/view_voters.html:58
+msgid "Back"
+msgstr "Atrás"
+
+#: census/templates/delete_census.html:20
+#: census/templates/delete_census.html:47 census/templates/edit_census.html:20
+#: census/templates/edit_census.html:47
+msgid "Edit census"
+msgstr "Editar censo"
+
+#: census/templates/delete_census.html:27 census/templates/edit_census.html:27
+msgid "Select the voting to assign to this census"
+msgstr "Seleccionar la votación a asignar en este censo"
+
+#: census/templates/delete_census.html:37 census/templates/edit_census.html:37
+msgid "Select the user to assign to this census"
+msgstr "Seleccionar el usuario a asignar a este censo"
+
+#: census/templates/list_census.html:4
+msgid "Censos"
+msgstr "Censo"
+
+#: census/templates/list_census.html:6
+msgid "Lista censos"
+msgstr "Lista censos"
+
+#: census/templates/list_census.html:12
+msgid "Votación"
+msgstr "Votación"
+
+#: census/templates/list_census.html:13
+msgid "Personas"
+msgstr "Personas"
+
+#: census/templates/list_census.html:17
+msgid "Nombre"
+msgstr "Nombre"
+
+#: census/templates/list_census.html:20
+msgid "Aún no hay usuarios en el censo"
+msgstr "Aún no hay usuarios en el censo"
+
+#: census/templates/list_census.html:25
+msgid "Aún no hay censos registrados"
+msgstr "Aún no hay censos registrados"
+
+#: census/templates/view_voters.html:19
+#, fuzzy
+#| msgid "Lista censos"
+msgid "List census"
+msgstr "Lista censos"
+
+#: census/templates/view_voters.html:24
+msgid "View Voters"
+msgstr "Lista votantes"
+
+#: census/templates/view_voters.html:30
+msgid "First name"
+msgstr "Nombre"
+
+#: census/templates/view_voters.html:31
+msgid "Last name"
+msgstr "Apellidos"
 
 #: decide/settings.py:163
 msgid "Español"

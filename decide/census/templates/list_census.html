@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block titulo %}{% trans 'Censos' %}{% endblock %}
+
+{% block encabezado %} <h1>{% trans 'Lista censos' %}</h1> {% endblock %}
+
+{% block contenido %}
+<ul>
+	{% for dato in census %}
+	<li>{{dato.get_name|capfirst}}</br>
+		{% trans 'Votación' %}: {{dato.get_voting}} </br>
+		{% trans 'Personas' %}: </br>
+		<ul>
+		{% for user in users %}
+			{% if user in dato.get_users.all %}
+			<li>{% trans 'Nombre' %}: {{user}}</li>
+			{% endif %}
+		{% empty %}
+		<li>{% trans 'Aún no hay usuarios en el censo' %}</li>
+		{% endfor %} </br>
+	</ul>
+	</li>
+	{% empty %}
+	<li>{% trans 'Aún no hay censos registrados' %}</li>
+	{% endfor %}
+</ul>	
+{% endblock %}
